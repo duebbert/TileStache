@@ -304,6 +304,10 @@ def _parseConfigfileCache(cache_dict, dirpath):
         elif _class is Caches.Redis.Cache:
             if 'key prefix' in cache_dict:
                 kwargs['key_prefix'] = cache_dict['key prefix']
+            if 'master host' in cache_dict:
+                kwargs['master_host'] = cache_dict['master host']
+            if 'master port' in cache_dict:
+                kwargs['master_port'] = cache_dict['master port']
 
             add_kwargs('host', 'port', 'db')
     
